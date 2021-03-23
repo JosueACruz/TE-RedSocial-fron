@@ -1,34 +1,62 @@
 Formularios:
 
-1- PaginaPrincipal
-
+1- PaginaPrincipal (LISTA DE PUBLICACIONES)
+	Una lista que se correra hacia abajo, como Instragram
+	mostrando 2 publicaciones como mucho en pantalla
+	
+	un container, con el nombre del usuario que ha subido
+	la foto, 
+	con el titulo
 
 2 - Perfil
-
+	Nombre Usuario
+	Descripcion
+	Imagen de perfil
+	Correo visible
+	Seguidores
+	Siguiendo
+	Redes sociales
 
 3 - login
-
+	correo
+	password
 
 4 - registro
-
+	Registrar con google
 
 5 - Notificaciones
-
+	(panel desplegable o contenedor)
+	Si alguien dio like o te siguio
 
 6 - editar perfil
-
+	Cambiar:
+	Nombre Usuario
+	Apellido
+	Descripcion
+	Imagen de perfil
+	Correo visible
+	Seguidores
+	Siguiendo
+	Redes sociales
 
 7 - seguidores y personas que sigo
+	Lista de personas que me siguen
+	Lista de personas que sigo
+	(Se puede tomar como referencia instagram "SIN EL MODAL XD")
 
-
-8 - Publicar (Foto, titulo, descripcion)
-
-
-9 - Publicaciones que me han gustado
-
+8 - Publicar
+	Foto, 
+	titulo, 
+	descripcion
+	
+9 - Publicaciones que me han gustado ((.gitignore (ignorar por el momento)))
+	Una lista como seguidores
 
 10 - mis publicaciones
-
+	(Como instagram)
 
 11 - ver publicacion
-
+	(Como en pinterest)
+	La imagen
+	con el titulo
+	y aqui si la descripcion
