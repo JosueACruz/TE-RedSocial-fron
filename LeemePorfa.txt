@@ -1,0 +1,34 @@
+Formularios:
+
+1- PaginaPrincipal
+
+
+2 - Perfil
+
+
+3 - login
+
+
+4 - registro
+
+
+5 - Notificaciones
+
+
+6 - editar perfil
+
+
+7 - seguidores y personas que sigo
+
+
+8 - Publicar (Foto, titulo, descripcion)
+
+
+9 - Publicaciones que me han gustado
+
+
+10 - mis publicaciones
+
+
+11 - ver publicacion
+
