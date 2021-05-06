@@ -1,25 +1,24 @@
-<div class="row">
-    <div class="col-md-6 mx-auto mt-5">
-        <div class="card">
-            <div class="card-body">
-                <h1>Login</h1>
-                <form action="">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id=""/>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id=""/>
-                    </div>
-                    <button class="btn btn-primary btn-lg btn-block">
-                        Login
-                    </button>
-                </form>
-                <div class="form-group">
-                    <p>No tienes una cuenta? <a [routerLink]="['/register']">Registrarse</a></p>
+<section>
+    <div class="imgBox">
+        <img src="../../../assets/img/imgL.jfif" alt="">
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Login</h2>
+            <form action="">
+                <div class="inputBx">
+                    <input type="text" name="" placeholder="Username">
                 </div>
-            </div>
+                <div class="inputBx">
+                    <input type="password" name="" placeholder="Password">
+                </div>
+                <div class="inputBx">
+                    <input type="button" value="Sign In" [routerLink]="['/home']" name="">
+                </div>
+                <div class="inputBx">
+                    <p>No tengo una cuenta <a routerLink="/register">Registrate</a></p>
+                </div>
+            </form>
         </div>
     </div>
-</div>
+</section>

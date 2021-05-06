@@ -8,7 +8,7 @@ const routes: Routes = [
   //nos redireccione automaticamente al modulo o componente home
   {
     path:"",
-    redirectTo:"/home",
+    redirectTo:"/login",
     pathMatch:"full",
   },
 
