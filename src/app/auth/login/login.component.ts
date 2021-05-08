@@ -10,7 +10,6 @@ import { User } from 'src/app/user';
 export class LoginComponent implements OnInit {
   
   user = new User();
-  public image:string;
 
   constructor(private restService:RestService) { }
 
@@ -19,12 +18,8 @@ export class LoginComponent implements OnInit {
   getToken(){
     this.restService.tokenUser(this.user).subscribe(res => {
       console.log(res);
-      let tok = res[0];
-      sessionStorage.setItem("token",tok);
+      sessionStorage.setItem("token",res.toString());
     })
-  }
-  save(){
-    sessionStorage.setItem("token","tok");
   }
 
 }

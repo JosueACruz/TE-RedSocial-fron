@@ -12,7 +12,7 @@ export class RestService {
     return this.http.get(url);
   }
   public tokenUser(data){
-    return this.http.post('http://127.0.0.1:8000/api/usuarios',data);
+    return this.http.post('http://127.0.0.1:8000/api/login',data);
   }
 
   public InsertUser(data){

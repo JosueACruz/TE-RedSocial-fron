@@ -7,13 +7,13 @@
             <h2>Login</h2>
             <form action="">
                 <div class="inputBx">
-                    <input type="text" name="" placeholder="Username">
+                    <input type="text" name="user" placeholder="Username" [(ngModel)]="user.username">
                 </div>
                 <div class="inputBx">
-                    <input type="password" name="" placeholder="Password">
+                    <input type="password" name="pass" placeholder="Password" [(ngModel)]="user.pass">
                 </div>
                 <div class="inputBx">
-                    <button type="button" class="btn-grad " (click)="save()" [routerLink]="['/home']">Log In</button>
+                    <button type="button" class="btn-grad " (click)="getToken()" [routerLink]="['/home']">Log In</button>
                 </div>
                 <div class="inputBx">
                     <p>No tengo una cuenta <a routerLink="/register">Registrate</a></p>
