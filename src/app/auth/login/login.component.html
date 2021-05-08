@@ -5,15 +5,15 @@
     <div class="contentBx">
         <div class="formBx">
             <h2>Login</h2>
-            <form action="">
+            <form id="Login">
                 <div class="inputBx">
-                    <input type="text" name="user" placeholder="Username" [(ngModel)]="user.username">
+                    <input type="text" name="user" #user placeholder="Username" [(ngModel)]="user.username">
                 </div>
                 <div class="inputBx">
                     <input type="password" name="pass" placeholder="Password" [(ngModel)]="user.pass">
                 </div>
                 <div class="inputBx">
-                    <button type="button" class="btn-grad " (click)="getToken()" [routerLink]="['/home']">Log In</button>
+                    <button type="button" class="btn-grad " (click)="getToken()">Log In</button>
                 </div>
                 <div class="inputBx">
                     <p>No tengo una cuenta <a routerLink="/register">Registrate</a></p>
