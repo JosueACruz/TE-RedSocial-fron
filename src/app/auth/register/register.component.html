@@ -5,21 +5,21 @@
     <div class="contentBx">
         <div class="formBx">
             <h2>Register</h2>
-            <form action="">
+            <form>
                 <div class="inputBx">
-                    <input type="text" name="" placeholder="Name">
+                    <input type="text" name="name" placeholder="Name"  [(ngModel)]="user.nombre">
                 </div>
                 <div class="inputBx">
-                    <input type="text" name="" placeholder="Username">
+                    <input type="text" name="user" placeholder="Username"  [(ngModel)]="user.username">
                 </div>
                 <div class="inputBx">
-                    <input type="password" name="" placeholder="Password">
+                    <input type="password" name="pass" placeholder="Password"  [(ngModel)]="user.pass">
                 </div>
                 <div class="inputBx">
-                    <input type="text" name="" placeholder="E-mail">
+                    <input type="text" name="email" placeholder="E-mail">
                 </div>
                 <div class="inputBx">
-                    <input type="button" value="Sign Up" [routerLink]="['/home']" name="">
+                    <button type="button" class="btn-grad " (click)="insertUser()" [routerLink]="['/home']">Add Favorite</button>
                 </div>
                 <div class="inputBx">
                     <p>Tienes una cuenta <a routerLink="/login">Log In</a></p>
