@@ -67,6 +67,18 @@ section .contentBx .formBx .inputBx{
     margin-bottom: 20px;
 }
 
+section .contentBx .formBx .inputBx button{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 2px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #dbe2e6;
+    background: transparent;
+    border-radius: 30px;
+}
 section .contentBx .formBx .inputBx input{
     width: 100%;
     padding: 10px 20px;
@@ -80,7 +92,7 @@ section .contentBx .formBx .inputBx input{
     border-radius: 30px;
 }
 
-section .contentBx .formBx .inputBx input[type="button"]{
+section .contentBx .formBx .inputBx button[type="button"]{
     background: #ff4584;
     color: #fff;
     outline: none;
@@ -89,7 +101,7 @@ section .contentBx .formBx .inputBx input[type="button"]{
     cursor: pointer;
 }
 
-section .contentBx .formBx .inputBx input[type="button"]:hover{
+section .contentBx .formBx .inputBx button[type="button"]:hover{
     background: #f53677;
 }
 
