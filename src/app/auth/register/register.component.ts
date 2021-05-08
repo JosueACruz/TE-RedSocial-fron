@@ -1,7 +1,6 @@
 import { User } from './../../user';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
-import {AppRoutingModule} from './register-routing.module';
 
 @Component({
   selector: 'app-register',
