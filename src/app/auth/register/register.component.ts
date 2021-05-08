@@ -1,6 +1,7 @@
 import { User } from './../../user';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
+import {AppRoutingModule} from './register-routing.module';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,8 @@ export class RegisterComponent implements OnInit {
   insertUser(){
     this.restService.InsertUser(this.user).subscribe(res => {
       console.log(res);
+      let toki = res.toString();
+      sessionStorage.setItem('token', toki);
     })
   }
 }
