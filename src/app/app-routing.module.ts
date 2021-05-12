@@ -17,6 +17,10 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) }, 
   { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
   { path: 'menu', loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule) },
+  { path: 'editProfile', loadChildren: () => import('./profile/edit-profile/edit-profile.module').then(m => m.EditProfileModule) },
+  { path: 'explore', loadChildren: () => import('./profile/explore/explore.module').then(m => m.ExploreModule) },
+  { path: 'followers', loadChildren: () => import('./profile/followers/followers.module').then(m => m.FollowersModule) },
+  { path: 'following', loadChildren: () => import('./profile/following/following.module').then(m => m.FollowingModule) },
 ];
 
 @NgModule({
