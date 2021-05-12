@@ -13,7 +13,7 @@
   height: 45px;
 }
 
-.navigation .navigations__links {
+.navigation .navigationsLs {
   display: flex;
   padding: 0;
   list-style-type: none;
@@ -44,7 +44,7 @@
   animation-delay: 0.3s;
 }
 
-.navigation__link {
+.navigationL {
   color: rgba(0, 0, 0, 0.8);
   font-size: 18px;
 }
@@ -74,4 +74,8 @@
   left: 10px;
   color: rgba(0, 0, 0, 0.5);
   font-size: 12px;
+}
+
+.puntero{
+  cursor: pointer;
 }
