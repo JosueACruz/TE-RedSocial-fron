@@ -9,6 +9,15 @@
         </header>
         <form action="" class="edit-profile__form">
             <div class="form__row">
+                <input (change)="capturarFile($event)" type="file" >
+            </div>
+            <div>
+                <button type="button" [disabled]="loading" (click)="subirArchivo()"></button>
+            </div>
+            <div *ngIf="previsualizacion" class="form__row">
+                <img width="100px" [src]="previsualizacion" alt="" >
+            </div>
+            <div class="form__row">
                 <label for="full-name" class="form__label">Name:</label>
                 <input id="full-name" type="text" class="form__input" />
             </div>
