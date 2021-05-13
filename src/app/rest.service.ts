@@ -30,4 +30,9 @@ export class RestService {
     let url = this.http.put('http://127.0.0.1:8000/api/usuarios/'+accessToken,data);
     return url;
   }
+
+  public getPublicaciones(){
+    let url = this.http.get('http://127.0.0.1:8000/api/Publication/');
+    return url;
+  }
 }
