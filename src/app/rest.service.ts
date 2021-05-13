@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Injectable({
@@ -13,21 +13,26 @@ export class RestService {
     return this.http.get(url);
   }
   public tokenUser(data){
-    return this.http.post('http://127.0.0.1:8000/api/login',data);
+    return this.http.post('http://127.0.0.1:8000/api/login',data);//genera token inserta en BD
   }
 
   public InsertUser(data){
-    return this.http.post('http://127.0.0.1:8000/api/usuarios',data);
+    return this.http.post('http://127.0.0.1:8000/api/usuarios',data);//Inserta usuarios
   }
   public logOut(data){
     let accessToken = sessionStorage.getItem('token');
-    let url = this.http.put('http://127.0.0.1:8000/api/login/'+accessToken,data);
+    let url = this.http.put('http://127.0.0.1:8000/api/login/'+accessToken,data);//cierra sesion
     return url;
     
   }
   public editProfile(data){
     let accessToken = sessionStorage.getItem('token');
-    let url = this.http.put('http://127.0.0.1:8000/api/usuarios/'+accessToken,data);
+    let url = this.http.put('http://127.0.0.1:8000/api/usuarios/'+accessToken,data);//actualiza perfil
     return url;
+  }
+
+  public userProfile(){
+    let accessToken = sessionStorage.getItem('token');
+    return this.http.get('http://127.0.0.1:8000/api/token/'+accessToken)//obitene user profile
   }
 }

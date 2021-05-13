@@ -16,10 +16,10 @@
                     <input type="password" name="pass" placeholder="Password"  [(ngModel)]="user.pass">
                 </div>
                 <div class="inputBx">
-                    <input type="text" name="email" placeholder="E-mail">
+                    <input type="text" name="email" placeholder="E-mail" [(ngModel)]="user.email">
                 </div>
                 <div class="inputBx">
-                    <button type="button" class="btn-grad " (click)="insertUser()" [routerLink]="['/home']">Add Favorite</button>
+                    <button type="button" class="btn-grad " (click)="insertUser()" [routerLink]="['/home']">Register</button>
                 </div>
                 <div class="inputBx">
                     <p>Tienes una cuenta <a routerLink="/login">Log In</a></p>

@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
   insertUser(){
     this.restService.InsertUser(this.user).subscribe(res => {
+      console.log(this.user)
       console.log(res);
       let toki = res.toString();
       sessionStorage.setItem('token', toki);
