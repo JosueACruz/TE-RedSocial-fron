@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RestService } from 'src/app/rest.service';
-import { User } from 'src/app/user';
+import { User } from './../../user';
 
 @Component({
   selector: 'app-edit-profile',
@@ -13,13 +13,15 @@ export class EditProfileComponent implements OnInit {
 
   public archivos: any = [];
   public previsualizacion: string;
-  public loading: boolean
+  public loading: boolean;
 
   
   user = new User();
 
 
-  constructor(private sanitizer:DomSanitizer,private restService:RestService, private router: Router) { }
+  constructor(
+    private sanitizer:DomSanitizer,
+    private restService:RestService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -61,5 +63,13 @@ export class EditProfileComponent implements OnInit {
 
   subirArchivo(): any {
     
+  }
+
+  updateUser(){
+    this.restService.editProfile(this.user).subscribe(res=>{
+      console.log(this.user)
+      console.log('Res:',res)
+      this.router.navigate(['/profile']);
+    });
   }
 }

@@ -3,7 +3,7 @@
     <div class="edit-profile__container">
         <header class="edit-profile__header">
             <div class="edit-profile__avatar-container">
-                <img src="images/avatar.jpg" class="edit-profile__avatar" />
+                <img src="" class="edit-profile__avatar" />
             </div>
             <h4 class="edit-profile__username">milton.cerritos</h4>
         </header>
@@ -19,30 +19,31 @@
             </div>
             <div class="form__row">
                 <label for="full-name" class="form__label">Name:</label>
-                <input id="full-name" type="text" class="form__input" />
+                <input id="full-name" name="name" type="text" class="form__input" [(ngModel)]="user.nombre" >
             </div>
             <div class="form__row">
                 <label for="user-name" class="form__label">Username:</label>
-                <input id="user-name" type="text" class="form__input" />
+                
+                <input type="text" name="user" class="form__input"  [(ngModel)]="user.username">
             </div>
             <div class="form__row">
                 <label for="website" class="form__label">Website:</label>
-                <input id="website" type="url" class="form__input" />
+                <input id="website" name="webSite" type="url" class="form__input" [(ngModel)]="user.webSite" >
             </div>
             <div class="form__row">
                 <label for="bio" class="form__label">Description:</label>
-                <textarea id="bio"></textarea>
+                <textarea id="bio" name="desc" [(ngModel)]="user.desc"></textarea>
             </div>
             <div class="form__row">
                 <label for="email" class="form__label">Email:</label>
-                <input id="email" type="email" class="form__input" />
+                <input id="email" name="email" type="email" class="form__input" [(ngModel)]="user.email" >
             </div>
             <div class="form__row">
                 <label for="user-pass" class="form__label">Password:</label>
-                <input id="user-pass" type="text" class="form__input" />
+                <input id="user-pass" name="pass" type="password" class="form__input" [(ngModel)]="user.pass" >
             </div>
             
-            <input type="submit" value="Submit">
+            <button type="submit" class="btn-grad " (click)="updateUser()" >Edit Profile</button>
         </form>
     </div>
 </main>
