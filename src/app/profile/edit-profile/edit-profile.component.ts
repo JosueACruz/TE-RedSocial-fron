@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { RestService } from 'src/app/rest.service';
 import { User } from './../../user';
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 
 @Component({
   selector: 'app-edit-profile',
@@ -18,12 +19,27 @@ export class EditProfileComponent implements OnInit {
   
   user = new User();
 
+  fileName = '';
 
   constructor(
     private sanitizer:DomSanitizer,
-    private restService:RestService, private router: Router) { }
+    private restService:RestService, private router: Router,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  onFileSelected(event){
+    const file:File = event.target.files[0];
+    if(file){
+      this.fileName = file.name;
+      const formData = new FormData();
+      formData.append("Image", file);
+      formData.append('_method', 'PUT');
+      let accessToken = sessionStorage.getItem('token');
+      const upload$ = this.http.post("http://localhost:8000/api/UserImage/"+accessToken, formData);
+      upload$.subscribe();
+    }
   }
 
   capturarFile(event):any{
