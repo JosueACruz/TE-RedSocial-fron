@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { EditProfileRoutingModule } from './edit-profile-routing.module';
 import { EditProfileComponent } from './edit-profile.component';
 import { MenuModule } from '../../menu/menu.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorTailorModule } from '@ngneat/error-tailor';
 
 
 @NgModule({
@@ -13,6 +14,17 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     EditProfileRoutingModule,
+    ReactiveFormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Campo requerido',
+          minlength: ({ requiredLength, actualLength }) =>
+            `Expect ${requiredLength} but got ${actualLength}`,
+          invalidAddress: error => `Address isn't valid`
+        }
+      }
+    }),
     MenuModule
   ]
 })

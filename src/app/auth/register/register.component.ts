@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from './../../user';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
@@ -10,10 +11,17 @@ import { RestService } from 'src/app/rest.service';
 export class RegisterComponent implements OnInit {
 
   user = new User();
+  public form: FormGroup;
   
-  constructor(private restService:RestService) { }
+  constructor(private restService:RestService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email:['',[Validators.required, Validators.email]],
+      password:['',Validators.required],
+      username:['',Validators.required],
+      nombre:['',Validators.required]
+    });
   }
 
   insertUser(){

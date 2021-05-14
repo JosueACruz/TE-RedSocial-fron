@@ -1,0 +1,7 @@
+section control-error .contentBx .formBx .inputBx label{
+    color: red;
+}
+
+section .contentBx .formBx .inputBx .ng-invalid.ng-touched {
+    border: solid 2px red;
+}
