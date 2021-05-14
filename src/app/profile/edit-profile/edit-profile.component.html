@@ -11,9 +11,6 @@
             <div class="form__row">
                 <input (change)="onFileSelected($event)" type="file"  #fileUpload >
             </div>
-            <div>
-                <button type="button" [disabled]="loading" (click)="subirArchivo() "></button>
-            </div>
             <div *ngIf="previsualizacion" class="form__row">
                 <img width="100px" [src]="previsualizacion" alt="" >
             </div>
