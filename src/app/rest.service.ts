@@ -27,7 +27,7 @@ export class RestService {
   }
   public editProfile(data){
     let accessToken = sessionStorage.getItem('token');
-    let url = this.http.put('http://127.0.0.1:8000/api/usuarios/'+accessToken,data);//actualiza perfil
+    let url = this.http.post('http://127.0.0.1:8000/api/usuarios/'+accessToken,data);//actualiza perfil
     return url;
   }
 
