@@ -1,46 +1,51 @@
 <app-menu></app-menu>
 <main id="edit-profile">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="edit-profile__container">
         <header class="edit-profile__header">
             <div class="edit-profile__avatar-container">
-                <img src="" class="edit-profile__avatar" />
             </div>
-            <h4 class="edit-profile__username">milton.cerritos</h4>
+            <div class="profile__title">
+                <h3 class="profile__username">{{user.username}}</h3>
+                <a class="editP" href="/editProfile">Edit profile</a>
+                <i class="fa fa-cog fa-lg"></i>
+            </div>
+            
         </header>
-        <form action="" class="edit-profile__form">
-            <div class="form__row">
-                <input (change)="onFileSelected($event)" type="file"  #fileUpload >
-            </div>
-            <div *ngIf="previsualizacion" class="form__row">
-                <img width="100px" [src]="previsualizacion" alt="" >
-            </div>
+        <form action="" class="edit-profile__form" [formGroup]="form" errorTailor>
             <div class="form__row">
                 <label for="full-name" class="form__label">Name:</label>
-                <input id="full-name" name="name" type="text" class="form__input" [(ngModel)]="user.nombre" >
+                <input id="full-name" name="name" type="text" class="form__input" [(ngModel)]="user.nombre" formControlName="nombre">
             </div>
             <div class="form__row">
                 <label for="user-name" class="form__label">Username:</label>
                 
-                <input type="text" name="user" class="form__input"  [(ngModel)]="user.username">
+                <input type="text" name="user" class="form__input"  [(ngModel)]="user.username" formControlName="username">
             </div>
             <div class="form__row">
                 <label for="website" class="form__label">Website:</label>
-                <input id="website" name="webSite" type="url" class="form__input" [(ngModel)]="user.webSite" >
+                <input id="website" name="webSite" type="url" class="form__input" [(ngModel)]="user.webSite" formControlName="webSite">
             </div>
             <div class="form__row">
                 <label for="bio" class="form__label">Description:</label>
-                <textarea id="bio" name="desc" [(ngModel)]="user.desc"></textarea>
+                <textarea id="bio" name="desc" [(ngModel)]="user.desc" formControlName="desc"></textarea>
             </div>
             <div class="form__row">
                 <label for="email" class="form__label">Email:</label>
-                <input id="email" name="email" type="email" class="form__input" [(ngModel)]="user.email" >
+                <input id="email" name="email" type="email" class="form__input" [(ngModel)]="user.email" formControlName="email" >
             </div>
             <div class="form__row">
                 <label for="user-pass" class="form__label">Password:</label>
-                <input id="user-pass" name="pass" type="password" class="form__input" [(ngModel)]="user.pass" >
+                <input id="user-pass" name="pass" type="password" class="form__input" [(ngModel)]="user.pass" formControlName="password">
+            </div>
+            <div class="form__row">
+                <input (change)="onFileSelected($event)" type="file" class="inputFile"  #fileUpload >
+            </div>
+            <div *ngIf="previsualizacion" class="form__row">
+                <img width="100px" [src]="previsualizacion" alt="" >
             </div>
             
-            <button type="submit" class="btn-grad " (click)="updateUser()" >Edit Profile</button>
+            <button type="submit" class="btn-grad " [disabled]="form.invalid" (click)="updateUser()" >Edit Profile</button>
         </form>
     </div>
 </main>

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RestService } from 'src/app/rest.service';
 import { User } from './../../user';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profile',
@@ -20,13 +21,24 @@ export class EditProfileComponent implements OnInit {
   user = new User();
   file:File;
   fileName = '';
+  public form: FormGroup;
+
 
   constructor(
     private sanitizer:DomSanitizer,
     private restService:RestService, private router: Router,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email:['',[Validators.required, Validators.email]],
+      password:['',Validators.required],
+      username:['',Validators.required],
+      nombre:['',Validators.required],
+      webSite:['',Validators.required],
+      desc:['',Validators.required]
+    });
   }
 
   onFileSelected(event){

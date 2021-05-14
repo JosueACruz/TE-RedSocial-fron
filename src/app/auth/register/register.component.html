@@ -5,21 +5,21 @@
     <div class="contentBx">
         <div class="formBx">
             <h2>Register</h2>
-            <form>
+            <form [formGroup]="form" errorTailor>
                 <div class="inputBx">
-                    <input type="text" name="name" placeholder="Name"  [(ngModel)]="user.nombre">
+                    <input type="text" name="name" placeholder="Name"  [(ngModel)]="user.nombre" formControlName="nombre">
                 </div>
                 <div class="inputBx">
-                    <input type="text" name="user" placeholder="Username"  [(ngModel)]="user.username">
+                    <input type="text" name="user" placeholder="Username"  [(ngModel)]="user.username" formControlName="username">
                 </div>
                 <div class="inputBx">
-                    <input type="password" name="pass" placeholder="Password"  [(ngModel)]="user.pass">
+                    <input type="password" name="pass" placeholder="Password"  [(ngModel)]="user.pass" formControlName="password">
                 </div>
                 <div class="inputBx">
-                    <input type="text" name="email" placeholder="E-mail" [(ngModel)]="user.email">
+                    <input type="text" name="email" placeholder="E-mail" [(ngModel)]="user.email" formControlName="email">
                 </div>
                 <div class="inputBx">
-                    <button type="button" class="btn-grad " (click)="insertUser()" [routerLink]="['/home']">Register</button>
+                    <button type="button" class="btn-grad " [disabled]="form.invalid" (click)="insertUser()" [routerLink]="['/home']">Register</button>
                 </div>
                 <div class="inputBx">
                     <p>Tienes una cuenta <a routerLink="/login">Log In</a></p>
