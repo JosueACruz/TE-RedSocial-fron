@@ -23,10 +23,9 @@ export class HomeComponent implements OnInit {
     this.restService.getPublicaciones().subscribe(res => this.publica = res )
   }
 
-  obtener(){
+  obtener(usern){
     console.log(document.getElementById("username").textContent);
-    sessionStorage.setItem("username",document.getElementById("username").textContent)
+    sessionStorage.setItem("username",usern.textContent)
     this.router.navigate(['/profileuser']);
   }
-
 }
