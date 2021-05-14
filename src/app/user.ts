@@ -5,4 +5,5 @@ export class User {
     email:any;
     webSite:any;
     desc:any;
+    ImageProfile:any;
 }

@@ -49,4 +49,14 @@ export class RestService {
   public insertPublicacion(data){
     return this.http.post('http://127.0.0.1:8000/api/Publication',data);//Inserta publicaion
   }
+
+  public otroPerfil(){
+    let otroUser = sessionStorage.getItem('username');
+    return this.http.get('http://127.0.0.1:8000/api/usuarios/'+otroUser);//Inserta publicaion
+  }
+
+  public publicacionesProfileOtro(){
+    let otroUser = sessionStorage.getItem('username');
+    return this.http.get('http://localhost:8000/api/otrapublication/'+otroUser)//obitene user publicaciones login
+  }
 }

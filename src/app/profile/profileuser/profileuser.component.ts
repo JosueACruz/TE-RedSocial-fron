@@ -1,4 +1,6 @@
+import { RestService } from 'src/app/rest.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profileuser',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileuserComponent implements OnInit {
 
-  constructor() { }
+  otro=null;
+  otroPub=null;
+
+  constructor(private restService:RestService, private router: Router) { }
 
   ngOnInit(): void {
+    this.restService.otroPerfil().subscribe(res =>this.otro = res);
+    this.restService.publicacionesProfileOtro().subscribe(res => this.otroPub = res );
+    sessionStorage.removeItem('username');
   }
 
 }
