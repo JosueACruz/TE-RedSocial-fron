@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<main id="edit-profile">
+    <div class="edit-profile__container">
+        <header class="edit-profile__header">
+            <div class="edit-profile__avatar-container">
+                <img src="" class="edit-profile__avatar" />
+            </div>
+            <h4 class="edit-profile__username">milton.cerritos</h4>
+        </header>
+        <form action="" class="edit-profile__form">
+            <div class="form__row">
+                <label for="full-name" class="form__label">Title:</label>
+                <input id="full-name" name="title" type="text" class="form__input" [(ngModel)]="pub.title">
+            </div>
+            <div class="form__row">
+                <label for="user-name" class="form__label">Description:</label>
+                
+                <input type="text" name="desc" class="form__input"  [(ngModel)]="pub.description">
+            </div>
+            
+            <div class="form__row">
+                <input  class="inputFile" (change)="capturarFile($event)" type="file" >
+            </div>
+
+            <div *ngIf="previsualizacion" class="form__row">
+                <img width="100px" [src]="previsualizacion" alt="" >
+            </div>
+            <button type="submit" class="btn-grad " (click)="enviarData()" >Save</button>
+        </form>
+    </div>
+</main>
+
