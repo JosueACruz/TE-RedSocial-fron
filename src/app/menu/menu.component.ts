@@ -12,11 +12,11 @@ import { User } from '../user';
 export class MenuComponent implements OnInit {
 
   user = new User();
-  
+  public logged = false;
   constructor(private restService:RestService, private router: Router) { }
 
   ngOnInit(): void {
-    
+    this.checkUser();
   }
   
 
@@ -28,4 +28,16 @@ export class MenuComponent implements OnInit {
     });
   }
 
+  checkUser(){
+    if (this.restService.getUser() === null) {
+      this.logged = false;
+      console.log('el user esta: '+this.logged)
+    }else{
+      this.logged = true;
+      console.log('el user esta: '+this.logged)
+    }
+  }
+  activado(){
+    
+  }
 }

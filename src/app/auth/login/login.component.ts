@@ -12,11 +12,13 @@ import { Routes } from '@angular/router';
 export class LoginComponent implements OnInit {
   
   user = new User();
+  public logged = false;
 
   constructor(private restService:RestService, private router: Router ) { }
   
   
   ngOnInit(): void {
+    this.checkUser();
   }
   getToken(){
     this.restService.tokenUser(this.user).subscribe(res => {
@@ -33,5 +35,24 @@ export class LoginComponent implements OnInit {
       }
       
     })
+
+    
   }
+  checkUser(){
+    if (this.restService.getUser() === null) {
+      this.logged = false;
+      console.log('el user esta: '+this.logged)
+      if ( this.logged = false) {
+        this.router.navigate(['/home']);
+      }
+      
+    }else{
+      this.logged = true;
+      console.log('el user esta: '+this.logged)
+      if ( this.logged = true) {
+        this.router.navigate(['/home']);
+      }
+    }
+  }
+
 }

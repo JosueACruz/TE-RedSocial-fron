@@ -59,4 +59,14 @@ export class RestService {
     let otroUser = sessionStorage.getItem('username');
     return this.http.get('http://localhost:8000/api/otrapublication/'+otroUser)//obitene user publicaciones login
   }
+  public getUser(){
+    let user = sessionStorage.getItem('token');
+    console.log('el user es:'+user)
+    if (user!==null || typeof user!=='undefined') {
+      
+      return user;
+    } else {
+      return null;
+    }
+  }
 }
