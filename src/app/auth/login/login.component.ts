@@ -42,9 +42,7 @@ export class LoginComponent implements OnInit {
     if (this.restService.getUser() === null) {
       this.logged = false;
       console.log('el user esta: '+this.logged)
-      if ( this.logged = false) {
-        this.router.navigate(['/home']);
-      }
+     
       
     }else{
       this.logged = true;
