@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MenuModule } from '../menu/menu.module';
-
-
+import {AddpublicacionModule} from '../addpublicacion/addpublicacion.module'
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MenuModule
+    MenuModule,
+    AddpublicacionModule
   ]
 })
 export class HomeModule { }

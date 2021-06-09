@@ -5,7 +5,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { FormsModule } from '@angular/forms';
 import { MenuModule } from '../../menu/menu.module';
-
+import {AddpublicacionModule} from '../../addpublicacion/addpublicacion.module';
 
 @NgModule({
   declarations: [ProfileComponent],
@@ -13,7 +13,8 @@ import { MenuModule } from '../../menu/menu.module';
     CommonModule,
     FormsModule,
     ProfileRoutingModule,
-    MenuModule
+    MenuModule,
+    AddpublicacionModule
   ]
 })
 export class ProfileModule { }

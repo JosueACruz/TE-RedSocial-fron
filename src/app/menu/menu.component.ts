@@ -37,7 +37,4 @@ export class MenuComponent implements OnInit {
       console.log('el user esta: '+this.logged)
     }
   }
-  activado(){
-    
-  }
 }

@@ -41,8 +41,14 @@ export class LoginComponent implements OnInit {
   checkUser(){
     if (this.restService.getUser() === null) {
       this.logged = false;
+      
       console.log('el user esta: '+this.logged)
-     
+     if (this.logged == false) {
+       //let padre = document.getElementById("btn_add");
+       //var hijo = document.getElementById("btn");
+       //padre.removeChild(hijo)
+      //document.getElementById("btn_add").innerHTML = '';
+      }
       
     }else{
       this.logged = true;

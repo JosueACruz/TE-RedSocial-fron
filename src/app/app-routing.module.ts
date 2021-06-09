@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'following', loadChildren: () => import('./profile/following/following.module').then(m => m.FollowingModule) },
   { path: 'profileuser', loadChildren: () => import('./profile/profileuser/profileuser.module').then(m => m.ProfileuserModule) },
   { path: 'publicacion', loadChildren: () => import('./publicacion/publicacion.module').then(m => m.PublicacionModule) },
+  { path: 'addpublicacion', loadChildren: () => import('./addpublicacion/addpublicacion.module').then(m => m.AddpublicacionModule) },
 ];
 
 @NgModule({

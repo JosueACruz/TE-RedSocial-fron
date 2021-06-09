@@ -14,15 +14,16 @@ export class HomeComponent implements OnInit {
 
   publica = null;
   public logged = false;
-
+  click=0;
   publicacion = new Publicaciones();
   username='';
 
   constructor(private restService:RestService, private router: Router) { }
 
   ngOnInit(): void {
-    this.restService.getPublicaciones().subscribe(res => this.publica = res )
+    //
     this.checkUser();
+    this.restService.getPublicaciones().subscribe(res => this.publica = res )
   }
 
   obtener(usern){
@@ -40,6 +41,28 @@ export class HomeComponent implements OnInit {
     }else{
       this.logged = true;
       console.log('el user esta: '+this.logged)
+    }
+  }
+  darLike(pubiden){
+    let token=sessionStorage.getItem('token');
+    const formData = new FormData();
+    formData.append("token", token);
+    formData.append("idPublicacion",pubiden.textContent);
+    this.restService.likes(formData).subscribe(res=>{
+      console.log('Res:',res)
+    });
+    this.changeValue();
+  }
+  changeValue(){
+    if (this.click==0) {
+      var b = document.querySelector("#Nolike");
+      b.setAttribute("id", "like");
+      this.click=1
+      
+    }else if (this.click==1) {
+      var a = document.querySelector("#like");
+        a.setAttribute("id", "Nolike");
+        this.click=0
     }
   }
 }

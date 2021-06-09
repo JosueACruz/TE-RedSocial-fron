@@ -6,6 +6,7 @@ import { EditProfileComponent } from './edit-profile.component';
 import { MenuModule } from '../../menu/menu.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
+import {AddpublicacionModule} from '../../addpublicacion/addpublicacion.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
         }
       }
     }),
-    MenuModule
+    MenuModule,
+    AddpublicacionModule
   ]
 })
 export class EditProfileModule { }

@@ -69,4 +69,7 @@ export class RestService {
       return null;
     }
   }
+  public likes(data){
+    return this.http.post('http://localhost:8000/api/likes/',data);
+  }
 }

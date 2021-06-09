@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-menu></app-menu>
+<app-addpublicacion></app-addpublicacion>
 <main class="page">
     <section>
         <div class="content">
@@ -7,11 +8,12 @@
             <div *ngFor="let publicacion of publica">
                 <div class="post">
                     <div class="post-top">
-                        <div class="profile" (click)="obtener(usernm)">
+                        <div class="profile" (click)="obtener(usernm)" >
                             <div class="avatar">
                                 <img  [src]="'http://127.0.0.1:8000'+publicacion.ImageProfile" alt="User">
                             </div>
                             <a id="username" #usernm  [(ngModel)]="publicacion.username">{{publicacion.username}}</a>
+                            <a id="idP" #pubiden style="display: none;">{{publicacion._id}}</a>
                         </div>
                         <button>
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +27,7 @@
                     <div class="post-bottom">
                         <div class="buttons">
                             <div>
-                                <a  class="navigation__link">
+                                <a id="Nolike" class="navigation__link" value="ok" (click)=darLike(pubiden)>
                                     <i class="fa fa-thumbs-o-up iconos-post"></i>
                                 </a>
                             </div>
