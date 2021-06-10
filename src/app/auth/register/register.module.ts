@@ -14,16 +14,16 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
     FormsModule,
     RegisterRoutingModule,
     ReactiveFormsModule,
-    ErrorTailorModule.forRoot({
-      errors: {
-        useValue: {
-          required: 'Campo requerido',
-          minlength: ({ requiredLength, actualLength }) =>
-            `Expect ${requiredLength} but got ${actualLength}`,
-          invalidAddress: error => `Address isn't valid`
-        }
-      }
-    })
+    // ErrorTailorModule.forRoot({
+    //   errors: {
+    //     useValue: {
+    //       required: 'Campo requerido',
+    //       minlength: ({ requiredLength, actualLength }) =>
+    //         `Expect ${requiredLength} but got ${actualLength}`,
+    //       invalidAddress: error => `Address isn't valid`
+    //     }
+    //   }
+    // })
   ]
 })
 export class RegisterModule { }

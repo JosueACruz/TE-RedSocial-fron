@@ -22,7 +22,8 @@ export class EditProfileComponent implements OnInit {
   file:File;
   fileName = '';
   public form: FormGroup;
-
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  private nombrePattern: any = /^[A-Za-z]+$/;
 
   constructor(
     private sanitizer:DomSanitizer,
@@ -32,10 +33,10 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email:['',[Validators.required, Validators.email]],
-      password:['',Validators.required],
+      email:['',[Validators.required, Validators.pattern(this.emailPattern)]],
+      password:['',[Validators.required, Validators.minLength(8)]],
       username:['',Validators.required],
-      nombre:['',Validators.required],
+      nombre:['',[Validators.required, Validators.pattern(this.nombrePattern)]],
       webSite:['',Validators.required],
       desc:['',Validators.required]
     });
@@ -109,4 +110,11 @@ export class EditProfileComponent implements OnInit {
       this.router.navigate(['/profile']);
     });
   }
+
+  get email(){ return this.form.get('email');}
+  get password(){ return this.form.get('password');}
+  get username(){ return this.form.get('username');}
+  get nombre(){ return this.form.get('nombre');}
+  get webSite(){ return this.form.get('webSite');}
+  get desc(){ return this.form.get('desc');}
 }

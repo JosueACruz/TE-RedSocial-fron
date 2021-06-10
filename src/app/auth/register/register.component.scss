@@ -1,7 +1,12 @@
-section control-error .contentBx .formBx .inputBx label{
-    color: red;
-}
-
 section .contentBx .formBx .inputBx .ng-invalid.ng-touched {
     border: solid 2px red;
 }
+
+.alert-danger {
+    color: #e9081f;
+    margin-bottom: 5px;
+  }
+
+  .container-error-message {
+    padding: 3px;
+  }

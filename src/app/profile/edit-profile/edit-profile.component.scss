@@ -98,9 +98,7 @@
     font-size: 14px;
     padding: 7px 25px;
   }
-  section control-error .contentBx .formBx .inputBx label{
-    color: red;
-}
+
 .inputFile {    
   margin-left: 235px;
   border: 0;
@@ -121,4 +119,18 @@
   transition: all 0.3s ease-in-out;
 }
 
+.form__row .ng-invalid.ng-touched{
+  border: solid 2px red;
+}
+
+.alert-danger {
+  color: #e9081f;
+  background: white;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.container-error-message {
+  padding: 6px;
+}
   
