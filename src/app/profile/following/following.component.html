@@ -2,45 +2,19 @@
 <app-addpublicacion></app-addpublicacion>
 <main id="explore">
     <ul class="explore__users">
-        <li class="explore__user">
+        <li class="explore__user" *ngFor="let follow of followed">
             
             <div class="explore__user-column">
-                <img src="images/avatar.jpg" class="explore__avatar"/>
-                <div class="explore__info">
-                    <span class="explore__username">cruz.00</span>
-                    <span class="explore__full-name">Josue Cruz</span>
+                <img [src]="'http://127.0.0.1:8000'+follow.image" class="explore__avatar"/>
+                <div class="explore__info" (click)="obtener(usernm)">
+                    <span id="username" #usernm class="explore__username">{{follow.user}}</span>
+                    <span class="explore__full-name">{{follow.name}}</span>
                 </div>
             </div>
             <div class="explore__user-column">
-                <button>Stop Follow</button>
+                <button (click)="obtener(usernm)">Stop Follow</button>
             </div>
         </li>
-        <li class="explore__user">
-                
-                <div class="explore__user-column">
-                    <img src="images/avatar.jpg" class="explore__avatar"/>
-                    <div class="explore__info">
-                        <span class="explore__username">cruz.00</span>
-                    <span class="explore__full-name">Josue Cruz</span>
-                    </div>
-                </div>
-                <div class="explore__user-column">
-                    <button>Stop Follow</button>
-                </div>
-            </li>
-            <li class="explore__user">
-                    
-                    <div class="explore__user-column">
-                        <img src="images/avatar.jpg" class="explore__avatar"/>
-                        <div class="explore__info">
-                            <span class="explore__username">cruz.00</span>
-                    <span class="explore__full-name">Josue Cruz</span>
-                        </div>
-                    </div>
-                    <div class="explore__user-column">
-                        <button>Stop Follow</button>
-                    </div>
-                </li>
     </ul>
 </main>
 

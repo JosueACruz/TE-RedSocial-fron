@@ -72,4 +72,10 @@ export class RestService {
   public likes(data){
     return this.http.post('http://localhost:8000/api/likes/',data);
   }
+  public seguidores(data){
+    return this.http.post('http://localhost:8000/api/seguidores/',data);
+  }
+  public verSeguidores(data){
+    return this.http.post('http://localhost:8000/api/seguidos',data);
+  }
 }

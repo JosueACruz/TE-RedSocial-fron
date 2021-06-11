@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
     this.restService.logOut(this.user).subscribe(res => {
       this.router.navigate(['/login']);
       sessionStorage.removeItem("token");
+      sessionStorage.removeItem('username');
       console.log(res);
     });
   }
